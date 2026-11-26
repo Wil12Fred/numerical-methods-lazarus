@@ -20,6 +20,13 @@ jobs:
           fpc -iV
           lazbuild --version
 
+      - name: Register the cmdbox package
+        # cmdbox ships with Lazarus but is not registered by the Debian package
+        run: |
+          lpk=$(find /usr/lib/lazarus -name cmdbox.lpk | head -1)
+          echo "cmdbox: $lpk"
+          lazbuild --add-package-link "$lpk"
+
       - name: Build the GUI (lazbuild)
         run: lazbuild project1.lpi
 
