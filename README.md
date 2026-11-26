@@ -1,7 +1,7 @@
-# Análisis Numérico (UCSP)
+# Análisis Numérico
 
 A Lazarus / Free Pascal desktop application written for the Numerical
-Analysis / Numerical Methods course at UCSP. It is a small command console with
+Analysis / Numerical Methods university course. It is a small command console with
 an expression parser (`fpexprpars`) and a plotting area (TAChart): you type
 calls such as `bisec('x^2-2','x',0,2)` and get the result or a graph.
 
