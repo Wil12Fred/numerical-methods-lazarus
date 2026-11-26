@@ -1,4 +1,6 @@
-# Análisis Numérico
+# numerical-methods-lazarus
+
+> Análisis Numérico
 
 A Lazarus / Free Pascal desktop application written for the Numerical
 Analysis / Numerical Methods university course. It is a small command console with
