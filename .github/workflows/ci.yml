@@ -13,20 +13,21 @@ jobs:
       - name: Install Free Pascal and Lazarus
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends lazarus lazarus-src xvfb xauth
+          sudo apt-get install -y --no-install-recommends lazarus xvfb xauth unzip
 
       - name: Versions
         run: |
           fpc -iV
           lazbuild --version
 
-      - name: Register the cmdbox package
-        # cmdbox ships with Lazarus but is not registered by the Debian package
+      - name: Fetch and register the cmdbox package
+        # Debian/Ubuntu's Lazarus does not ship cmdbox; it lives in the
+        # Online Package Manager (CmdLine.zip). The checksum is pinned.
         run: |
-          lpk=$(find /usr/lib/lazarus /usr/share/lazarus -name cmdbox.lpk 2>/dev/null | head -1)
-          echo "cmdbox: $lpk"
-          if [ -z "$lpk" ]; then find / -xdev -name "*.lpk" 2>/dev/null | grep -i -e cmd -e chart -e lcl.lpk; dpkg -L lazarus-src-3.0 | grep -i cmd | head; fi
-          lazbuild --add-package-link "$lpk"
+          curl -sSfL -o "$RUNNER_TEMP/CmdLine.zip" https://packages.lazarus-ide.org/CmdLine.zip
+          echo "5190b2346563cab2e59244065bb53af802e596bda106953a6e50b53ea0f0bd99  $RUNNER_TEMP/CmdLine.zip" | sha256sum -c -
+          unzip -q "$RUNNER_TEMP/CmdLine.zip" -d "$RUNNER_TEMP/opm"
+          lazbuild --add-package-link "$RUNNER_TEMP/opm/CmdLine/cmdbox.lpk"
 
       - name: Build the GUI (lazbuild)
         run: lazbuild project1.lpi
