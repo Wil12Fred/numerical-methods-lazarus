@@ -13,7 +13,7 @@ jobs:
       - name: Install Free Pascal and Lazarus
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends lazarus xvfb xauth unzip
+          sudo apt-get install -y fpc lazarus xvfb xauth unzip
 
       - name: Versions
         run: |
