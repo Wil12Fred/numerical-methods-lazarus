@@ -52,7 +52,7 @@ begin
    Open.Parse1.AddVariable(Args[2].ResString,0);
    Open.Parse2.Expression:=Args[1].ResString;
    Open.Parse2.AddVariable(Args[2].ResString,0);
-   Open.x:=ArgToFloat(Args[2]);
+   Open.x:=ArgToFloat(Args[3]);
    Open.OpenType:=0;
    Result.resFloat := Open.execute;
    ActualVariable:=TVariable.create(Result.ResFloat);
