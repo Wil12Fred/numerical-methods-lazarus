@@ -8,7 +8,7 @@ program numerictests;
 
 uses
   {$IFDEF UNIX}cthreads,{$ENDIF}
-  Interfaces, Classes, SysUtils, Math,
+  Interfaces, Classes, SysUtils, Math, fpexprpars,
   class_close, class_open, class_integral, class_edo, class_lag;
 
 var
@@ -65,6 +65,20 @@ begin
   Result.n := n;
 end;
 
+function ConsoleNewton(x0: Double): Double;
+{ newt('power(x,2)-2','2*x','x',x0) as the console calls it }
+var Args: TExprParameterArray; R: TFPExpressionResult;
+begin
+  SetLength(Args, 4);
+  Args[0].ResultType := rtString; Args[0].ResString := 'power(x,2)-2';
+  Args[1].ResultType := rtString; Args[1].ResString := '2*x';
+  Args[2].ResultType := rtString; Args[2].ResString := 'x';
+  Args[3].ResultType := rtFloat;  Args[3].ResFloat := x0;
+  R.ResultType := rtFloat;
+  newton(R, Args);
+  Result := R.ResFloat;
+end;
+
 var
   L: TLag;
 begin
@@ -72,6 +86,8 @@ begin
   Check('bisection  x^2-2 on [0,2]', RootClose(F_BIS), Sqrt(2), 1e-4);
   Check('false-pos  x^2-2 on [0,2]', RootClose(F_FAL), Sqrt(2), 1e-3);
   Check('newton     x^2-2 from 1', RootOpen(F_NEW), Sqrt(2), 1e-6);
+  { the console wrapper must start from the 4th argument, x0 }
+  Check('newt(...) console from -1', ConsoleNewton(-1), -Sqrt(2), 1e-6);
   Check('secant     x^2-2 from 1', RootOpen(F_SEC), Sqrt(2), 1e-6);
 
   { Integral of x^3 on [0,2] = 4 }
