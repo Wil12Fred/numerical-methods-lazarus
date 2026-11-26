@@ -79,7 +79,7 @@ begin
     Xaux:=DatX;
     Yaux:=DatY;
     i:=find(x);
-    if(i=length(DatX)) or (DatX[i]=x) then begin
+    if(i=length(DatX)) or (DatX[i]<>x) then begin
        SetLength(DatX,length(DatX)+1);
        SetLength(DatY,length(DatY)+1);
     end;
@@ -95,7 +95,9 @@ begin
       i:=i+1;
     while(i<length(Xaux)) do begin
          DatX[j]:=XAux[i];
-         DatY[j]:=YAux[j];
+         DatY[j]:=YAux[i];
+         i:=i+1;
+         j:=j+1;
     end;
 end;
 
