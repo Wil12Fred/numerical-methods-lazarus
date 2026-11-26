@@ -13,3 +13,6 @@ project1.app/
 # OS / IDE
 .DS_Store
 .idea/
+tests/numerictests
+tests/numerictests.exe
+*.lps
