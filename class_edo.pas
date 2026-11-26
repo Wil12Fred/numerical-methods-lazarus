@@ -161,7 +161,7 @@ begin
   points.set_element(0,0,x);
   points.set_element(0,1,y);
   for i:=1 to n do begin
-     y:=y+h*0.5*(fd(x,y)+fd(x+h,y+h*fd(x,h)));
+     y:=y+h*0.5*(fd(x,y)+fd(x+h,y+h*fd(x,y)));
      x:=x+h;
      points.set_element(i,0,x);
      points.set_element(i,1,y);
