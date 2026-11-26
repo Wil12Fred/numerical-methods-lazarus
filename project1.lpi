@@ -38,7 +38,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="18">
+    <Units Count="13">
       <Unit0>
         <Filename Value="project1.pas"/>
         <IsPartOfProject Value="True"/>
@@ -60,78 +60,51 @@
         <UnitName Value="Unit2"/>
       </Unit2>
       <Unit3>
-        <Filename Value="unit3.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Frame2"/>
-        <ResourceBaseClass Value="Frame"/>
-        <UnitName Value="Unit3"/>
-      </Unit3>
-      <Unit4>
         <Filename Value="unit4.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Frame3"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <UnitName Value="Unit4"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="class_taylor.pas"/>
+        <IsPartOfProject Value="True"/>
       </Unit4>
       <Unit5>
-        <Filename Value="unit5.pas"/>
+        <Filename Value="class_close.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="Unit5"/>
       </Unit5>
       <Unit6>
-        <Filename Value="unit6.pas"/>
+        <Filename Value="class_raphson.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="Unit6"/>
       </Unit6>
       <Unit7>
-        <Filename Value="class_taylor.pas"/>
+        <Filename Value="class_integral.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit7>
       <Unit8>
-        <Filename Value="class_close.pas"/>
+        <Filename Value="class_edo.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit8>
       <Unit9>
-        <Filename Value="class_raphson.pas"/>
+        <Filename Value="class_regresion.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit9>
       <Unit10>
-        <Filename Value="class_integral.pas"/>
+        <Filename Value="class_lag.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit10>
       <Unit11>
-        <Filename Value="class_edo.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit11>
-      <Unit12>
-        <Filename Value="class_regresion.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit12>
-      <Unit13>
-        <Filename Value="class_lag.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit13>
-      <Unit14>
-        <Filename Value="prediccion.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="Prediccion"/>
-      </Unit14>
-      <Unit15>
         <Filename Value="mathnumerico.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="mathNumerico"/>
-      </Unit15>
-      <Unit16>
-        <Filename Value="taylornumerico.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="taylorNumerico"/>
-      </Unit16>
-      <Unit17>
+      </Unit11>
+      <Unit12>
         <Filename Value="matriznumerico.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="matrizNumerico"/>
-      </Unit17>
+      </Unit12>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
