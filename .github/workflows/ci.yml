@@ -13,7 +13,7 @@ jobs:
       - name: Install Free Pascal and Lazarus
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends lazarus xvfb xauth
+          sudo apt-get install -y --no-install-recommends lazarus lazarus-src xvfb xauth
 
       - name: Versions
         run: |
@@ -23,7 +23,7 @@ jobs:
       - name: Register the cmdbox package
         # cmdbox ships with Lazarus but is not registered by the Debian package
         run: |
-          lpk=$(find /usr/lib/lazarus -name cmdbox.lpk | head -1)
+          lpk=$(find /usr/lib/lazarus /usr/share/lazarus -name cmdbox.lpk 2>/dev/null | head -1)
           echo "cmdbox: $lpk"
           lazbuild --add-package-link "$lpk"
 
