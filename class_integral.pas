@@ -183,6 +183,7 @@ var
   nf: real;
 begin
   nf:= n;
+  n3:= n;
   if(n mod 3<>0) then
     n3:= n + 3-(n mod 3);
   h:= (xright-xleft)/(n3) ;
