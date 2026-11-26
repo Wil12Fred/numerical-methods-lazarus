@@ -1,0 +1,15 @@
+# Lazarus / Free Pascal build output
+lib/
+backup/
+*.o
+*.ppu
+*.compiled
+*.or
+*.lps
+*.bak
+project1
+project1.exe
+project1.app/
+# OS / IDE
+.DS_Store
+.idea/
