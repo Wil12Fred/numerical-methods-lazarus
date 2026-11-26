@@ -25,6 +25,7 @@ jobs:
         run: |
           lpk=$(find /usr/lib/lazarus /usr/share/lazarus -name cmdbox.lpk 2>/dev/null | head -1)
           echo "cmdbox: $lpk"
+          if [ -z "$lpk" ]; then find / -xdev -name "*.lpk" 2>/dev/null | grep -i -e cmd -e chart -e lcl.lpk; dpkg -L lazarus-src-3.0 | grep -i cmd | head; fi
           lazbuild --add-package-link "$lpk"
 
       - name: Build the GUI (lazbuild)
